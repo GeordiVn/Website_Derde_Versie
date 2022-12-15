@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fixed Width Layout</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+        * {
+            font-family: Arial, Verdana, sans-serif;
+            color: #665544;
+            text-align: center;
+            padding: 0;
+        }
+
+        body {
+            width: 90%;
+            margin: 0 auto;
+            background-color: #efefef;
+        }
+
+        .content {
+
+            background-color: #00CC33
+                /*   let op: content bevat float elementen,
+            div "ziet" deze float elementen niet en kan er dus deze css niet op toepassen
+            oplossing : leeg element inzetten (clearfix)*/
+
+        }
+
+        .clearfix::before,
+        .clearfix::after {
+            content: " ";
+            display: table;
+        }
+
+        .clearfix::after {
+            clear: both;
+        }
+
+        .column1,
+        .column2,
+        .column3 {
+            background-color: #efefef;
+            width: 31.3%;
+            float: left;
+            margin: 1%;
+            padding: 1%;
+            box-sizing: border-box;
+        }
+
+
+
+        li a {
+            text-decoration: none;
+        }
+
+        li a:hover {
+            color: #270d5c;
+            background-color: white;
+        }
+
+        li {
+            display: inline;
+            padding: 5px;
+            border-style: double;
+            background-color: #00CC33;
+
+        }
+
+        .footer {
+            text-align: right;
+            text-transform: capitalize;
+        }
+
+
+
+        @media screen and (max-width:620px) {
+
+            .clearfix::before,
+            .clearfix::after {
+                content: " ";
+                display: table;
+            }
+
+            .topnav a.icon {
+                background: lightgray;
+                display: block;
+                position: absolute;
+
+                right: 0;
+                top: 0;
+                margin-right: 10px;
+                margin-top: 10px;
+            }
+
+            ul {
+            
+                width: 100%;
+                list-style: none;
+                
+                
+            }
+
+            li {
+                display: flex;
+                border-style: none;
+                background-color: #333;
+                justify-content: center;
+                ;
+            }
+
+            li a {
+                color: white;
+            }
+
+
+
+            .column1,
+            .column2,
+            .column3 {
+
+                width: 90%;
+                margin-left: 5%;
+                margin-right: 1%;
+                
+            }
+
+
+        }
+
+        @media screen and (min-width:620px) {
+
+            #mylinks {
+                display: block;
+
+            }
+
+            .topnav a.icon {
+                display: none;
+            }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Logo</h1>
+
+
+    </div>
+    <div class="clearfix topnav">
+
+        <div id="myLinks">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Producten</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    </div>
+    <div class="content">
+        <p>Feature</p>
+        <div class="clearfix">
+            <div class="column1">
+                <p>Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een
+                    pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem
+                    Ipsum is
+                    dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot "Hier uw
+                    tekst,
+                    hier uw tekst" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten
+                    en
+                    web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een
+                    zoekopdracht
+                    naar "lorem ipsum" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich
+                    ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).
+                </p>
+            </div>
+            <div class="column2">
+                <p>In tegenstelling tot wat algemeen aangenomen wordt is Lorem Ipsum niet zomaar willekeurige tekst. het
+                    heeft zijn wortels in een stuk klassieke latijnse literatuur uit 45 v.Chr. en is dus meer dan 2000
+                    jaar
+                    oud. Richard McClintock, een professor latijn aan de Hampden-Sydney College in Virginia, heeft één
+                    van
+                    de meer obscure latijnse woorden, consectetur, uit een Lorem Ipsum passage opgezocht, en heeft
+                    tijdens
+                    het zoeken naar het woord in de klassieke literatuur de onverdachte bron ontdekt. Lorem Ipsum komt
+                    uit
+                    de secties 1.10.32 en 1.10.33 van "de Finibus Bonorum et Malorum" (De uitersten van goed en kwaad)
+                    door
+                    Cicero, geschreven in 45 v.Chr. Dit boek is een verhandeling over de theorie der ethiek, erg
+                    populair
+                    tijdens de renaissance. De eerste regel van Lorem Ipsum, "Lorem ipsum dolor sit amet..", komt uit
+                    een
+                    zin in sectie 1.10.32.
+
+                    Het standaard stuk van Lorum Ipsum wat sinds de 16e eeuw wordt gebruikt is hieronder, voor wie er
+                    interesse in heeft, weergegeven. Secties 1.10.32 en 1.10.33 van "de Finibus Bonorum et Malorum" door
+                    Cicero zijn ook weergegeven in hun exacte originele vorm, vergezeld van engelse versies van de 1914
+                    vertaling door H. Rackham.</p>
+            </div>
+            <div class="column3">
+                <p>Sectie 1.10.32 van "de Finibus Bonorum et Malorum", geschreven door Cicero in 45 v.Chr.
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam
+                    rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                    explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                    consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                    dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
+                    tempora
+                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+                    nostrum
+                    exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+                    autem
+                    vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
+                    illum
+                    qui dolorem eum fugiat quo voluptas nulla pariatur?"
+
+                    1914 vertaling door H. Rackham
+                    "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was
+                    born
+                    and I will give you a complete account of the system, and expound the actual teachings of the great
+                    explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids
+                    pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure
+                    rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or
+                    pursues or desires to obtain pain of itself, because it is pain, but because occasionally
+                    circumstances
+                    occur in which toil and pain can procure him some great pleasure. To take a trivial example, which
+                    of us
+                    ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has
+                    any
+                    right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or
+                    one
+                    who avoids a pain that produces no resultant pleasure?"</p>
+            </div>
+        </div>
+        <div class="clearfix">
+            <p class="footer">&copy; Copyright 2019</p>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
